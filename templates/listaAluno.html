@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block tituloPagina %}
+  <h1>{{ titulo }} </h1>
+{% endblock %}
+
+{% block conteudoPagina%}
+  <table id="alunoTabela" class="table table-striped">
+   <thead>
+     <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Matrícula</th>
+        <th scope="col">Data de Nascimento</th>
+        <th scope="col">Curso</th>
+     </tr>
+   </thead>
+  <tbody>
+    {% for linha in linhas%}
+      <tr>
+        <td>{{ linha[0] }}</td>
+        <td>{{ linha[1] }}</td>
+        <td>{{ linha[2] }}</td>
+        <td>{{ linha[3] }}</td>
+        <td>{{ linha[4] }}</td>
+      </tr>
+
+    {% endfor%}
+  </tbody>
+  </table>
+{% endblock %}
